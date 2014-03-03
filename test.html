@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>iframe</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        * { margin: 0; padding: 0; }
+        html {
+            overflow: hidden;
+        }
+        html, body { width: 100%; }
+        .content {
+            background: grey;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        .content:after {
+            content: "600x400";
+            font-size: 3em;
+        }
+        @media only screen and (max-width: 600px) {
+            .content {
+                width: 300px;
+                height: 200px;
+            }
+            .content:after {
+                content: "300x200";
+            }
+        }
+    </style>
+    <body>
+        <div class="content"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      <script src="extiframe.js"></script>
+    </body>
+</html>
