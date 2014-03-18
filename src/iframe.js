@@ -1,7 +1,14 @@
+/*! Responsive iFrame Copyright (c) 2014 Graham Licence
+ *  Requires: extiframe.js to be added to the target frame.
+ *  See: https://github.com/grahamlicence/responsive-iframe for details
+ *  Available via the MIT license
+ */
+ 
 (function () {
     var framesData = [],
-    iframes = [];
+        iframes = [];
 
+    // insert iframe to page and add to list of iframes
     function addIframe (el) {
         var url = el.dataset.url,
             height = el.dataset.height,
@@ -9,7 +16,6 @@
         iframeHtml.src = url;
         iframeHtml.frameBorder = 0;
         iframeHtml.className = 'inserted-iframe';
-        // insert iframe to page and add to list of iframes
         el.appendChild(iframeHtml);
         framesData.push({el: iframeHtml, url: url});
     }
@@ -18,13 +24,10 @@
         iframes = document.querySelectorAll('.iframe');
         // keep scrollbar permanently visble to prevent resize loop
         document.getElementsByTagName('body')[0].style.overflowY = 'scroll';
-        // console.log(iframes)
+        
         for (var i = 0; i < iframes.length; i += 1) {
-            // console.log(iframes[i].dataset.url)
             addIframe(iframes[i]);
         }
-        // console.log('framesData')
-        // console.log(framesData)
     }
 
     function updateIframe (el, data) {
@@ -32,21 +35,27 @@
         el.el.style.height = data.height + 'px';
     }
 
-    init();
-
-    // alternate listening system
+    // set listening system
     window.addEventListener("message", receiveMessage, false);
 
     function receiveMessage(event) {
-        // console.log(event)
-        var iframeNo;
+        var iframeNo,
+            origin = event.data.origin;
 
+        // find which iframe sent message
         for (var i = 0; i < framesData.length; i += 1) {
-            if (framesData[i].url === event.data.origin) {
+            if (framesData[i].url === origin) {
                 iframeNo = i;
             }
         }
-        // console.log(iframeNo)
-        updateIframe(framesData[iframeNo], event.data);
+        // update the iframe size
+        if (iframeNo >= 0) {
+            updateIframe(framesData[iframeNo], event.data);
+        } else {
+            console.log('Error \'data-url\' must be full domain path')
+        }
     }
+
+    return init();
+
 })();

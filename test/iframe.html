@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>iframe</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .inserted-iframe {
+            width: 100%;
+        }
+    </style>
+    <body>
+        <a href="https://github.com/grahamlicence/responsive-iframe"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+        
+        <div class="wrapper">
+            <h1>Responsive iframe demo</h1>
+
+            <p>This script is designed to enable cross domain iframe resizing for smaller site dependencies, for example externally hosted charts.</p>
+            
+            <p>See <a href="https://github.com/grahamlicence/responsive-iframe">https://github.com/grahamlicence/responsive-iframe</a> for details</p>
+
+            <div class="iframe" data-url="test.html" data-height="400">
+                <noscript>
+                    <iframe frameborder="0" width="100%" allowtransparency="true" marginheight="0" marginwidth="0" class="iframefallback"
+                 height="400" width="600" src="test.html" ></iframe>
+                </noscript>
+            </div>
+
+            <p>Non iframe content. Lorem ipsum dolor sit amet. </p>
+            
+            <div class="iframe" data-url="test2.html" data-height="400">
+                <noscript>
+                    <iframe frameborder="0" width="100%" allowtransparency="true" marginheight="0" marginwidth="0" class="iframefallback"
+                 height="400" width="600" src="test2.html" ></iframe>
+                </noscript>
+            </div>
+            
+            <p>Non iframe content. Lorem ipsum dolor sit amet. </p>
+        </div>
+
+      <script src="../src/iframe.js"></script>
+    </body>
+</html>
