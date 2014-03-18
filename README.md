@@ -37,3 +37,7 @@ Add the following html, changing the options listed below:
 `data-url` This is the url of your iframe. It must be the same path name as the iframe, eg http://www.example.com/test.html and not test.html
 
 `data-height` This is a default height for the iframe, used for aspect ratio
+
+### Browser support
+
+Tested on IE8+, Chrome, Firefox, Opera

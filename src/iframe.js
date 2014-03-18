@@ -45,13 +45,18 @@
     }
 
     // set listening system
-    window.addEventListener("message", receiveMessage, false);
+    if (!window.addEventListener) {
+        window.attachEvent("onmessage", receiveMessage, false);
+    } else {
+        window.addEventListener("message", receiveMessage, false);
+    }
 
     function receiveMessage(event) {
         var iframeNo,
             data = JSON.parse(event.data)
             origin = data.origin;
-            
+
+        console.log(data.origin)
         // find which iframe sent message
         for (var i = 0; i < framesData.length; i += 1) {
             if (framesData[i].url === origin) {

@@ -13,7 +13,7 @@
                     origin: window.location.href
                 },
                 ancestorOrigin;
-                
+
             if (window.location.ancestorOrigins) {
                 ancestorOrigin = window.location.ancestorOrigins[0]
             } else {
@@ -32,5 +32,9 @@
             }, 300);
         };
     logSizes();
-    window.addEventListener('resize', logSizes);
+    if (!window.addEventListener) {
+        window.attachEvent('resize', logSizes);
+    } else {
+        window.addEventListener('resize', logSizes);
+    }
 })();
