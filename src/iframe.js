@@ -56,7 +56,6 @@
             data = JSON.parse(event.data)
             origin = data.origin;
 
-        console.log(data.origin)
         // find which iframe sent message
         for (var i = 0; i < framesData.length; i += 1) {
             if (framesData[i].url === origin) {

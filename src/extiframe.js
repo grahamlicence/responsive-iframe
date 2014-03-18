@@ -17,7 +17,7 @@
             if (window.location.ancestorOrigins) {
                 ancestorOrigin = window.location.ancestorOrigins[0]
             } else {
-                ancestorOrigin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+                ancestorOrigin = (window.location != window.parent.location) ? document.referrer: document.location.protocol + "//" + document.location.hostname + (document.location.port ? ':' + document.location.port: '');
             }
             // don't send messages when directly opened
             if (ancestorOrigin === 'null') {
