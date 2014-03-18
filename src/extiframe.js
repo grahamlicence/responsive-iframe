@@ -12,16 +12,23 @@
                     height: content.clientHeight,
                     origin: window.location.href
                 },
-                ancestorOrigin = window.location.ancestorOrigins[0];
+                ancestorOrigin;
+                
+            if (window.location.ancestorOrigins) {
+                ancestorOrigin = window.location.ancestorOrigins[0]
+            } else {
+                ancestorOrigin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+            }
             // don't send messages when directly opened
             if (ancestorOrigin === 'null') {
+                // top.document.iframeListener(data);
                 console.log('Error: scripts should be fun on hosted sites or localhost')
                 return;
             }
             // limit number of messages sent when dragging window wider
             clearTimeout(message);
             message = setTimeout(function () {
-                window.parent.postMessage(data, ancestorOrigin);
+                parent.postMessage(JSON.stringify(data), ancestorOrigin);
             }, 300);
         };
     logSizes();

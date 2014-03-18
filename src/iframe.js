@@ -10,9 +10,18 @@
 
     // insert iframe to page and add to list of iframes
     function addIframe (el) {
-        var url = el.dataset.url,
-            height = el.dataset.height,
+        var url,
+            height,
             iframeHtml = document.createElement('iframe');
+
+        if (el.dataset) {
+            url = el.dataset.url || el.getAttribute('data-url'),
+            height = el.dataset.height;
+        } else {
+            url = el.getAttribute('data-url'),
+            height = el.getAttribute('data-height');
+        }
+
         iframeHtml.src = url;
         iframeHtml.frameBorder = 0;
         iframeHtml.className = 'inserted-iframe';
@@ -40,8 +49,9 @@
 
     function receiveMessage(event) {
         var iframeNo,
-            origin = event.data.origin;
-
+            data = JSON.parse(event.data)
+            origin = data.origin;
+            
         // find which iframe sent message
         for (var i = 0; i < framesData.length; i += 1) {
             if (framesData[i].url === origin) {
@@ -50,7 +60,7 @@
         }
         // update the iframe size
         if (iframeNo >= 0) {
-            updateIframe(framesData[iframeNo], event.data);
+            updateIframe(framesData[iframeNo], data);
         } else {
             console.log('Error \'data-url\' must be full domain path')
         }
