@@ -22,7 +22,7 @@
             // don't send messages when directly opened
             if (ancestorOrigin === 'null') {
                 // top.document.iframeListener(data);
-                console.log('Error: scripts should be fun on hosted sites or localhost')
+                console.log('Error: scripts should be run on hosted sites or localhost')
                 return;
             }
             // limit number of messages sent when dragging window wider
