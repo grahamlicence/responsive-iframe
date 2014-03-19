@@ -11,13 +11,21 @@ Demo at [grahamlicence.github.io/iframe/iframe.html](http://grahamlicence.github
 
 There are two script files, [extiframe.js](https://github.com/grahamlicence/responsive-iframe/blob/master/src/extiframe.js) and [iframe.js](https://github.com/grahamlicence/responsive-iframe/blob/master/src/iframe.js), which are added to the iFrame and the page calling the iframe. 
 
+```html
+<script src="iframe.js"></script>
+```
+
+```html
+<script src="extiframe.js"></script>
+```
+
+The inserted iFrame has a class `inserted-iframe` and giving this a width of 100% will mean the iFrame will exand to fit it's container. 
+
 ```css
 .inserted-iframe {
     width: 100%;
 }
 ```
-
-The inserted iFrame has a class `inserted-iframe` and giving this a width of 100% will mean the iFrame will exand to fit it's container. 
 
 ### Example html
 
