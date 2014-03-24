@@ -1,6 +1,6 @@
-/*! Responsive iFrame Copyright (c) 2014 Graham Licence
+/*! 
+ *  Responsive iFrame 1.0.0 Copyright (c) 2014 Graham Licence | https://github.com/grahamlicence/responsive-iframe
  *  Requires: iframe.js to be added to the parent frame.
- *  See: https://github.com/grahamlicence/responsive-iframe for details
  *  Available via the MIT license
  */
 (function () {

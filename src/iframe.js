@@ -1,4 +1,5 @@
-/*! Responsive iFrame Copyright (c) 2014 Graham Licence
+/*! 
+ *  Responsive iFrame Copyright (c) 2014 Graham Licence
  *  Requires: extiframe.js to be added to the target frame.
  *  See: https://github.com/grahamlicence/responsive-iframe for details
  *  Available via the MIT license
