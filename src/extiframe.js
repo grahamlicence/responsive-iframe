@@ -1,7 +1,6 @@
 /*! 
- *  Responsive iFrame 1.0.0 Copyright (c) 2014 Graham Licence | https://github.com/grahamlicence/responsive-iframe
- *  Requires: iframe.js to be added to the parent frame.
- *  Available via the MIT license
+ *  Responsive iFrame 1.0.0 Copyright (c) 2014 Graham Licence | http://graham.mit-license.org/
+ *  Requires: iframe.js to be added to the parent frame | https://github.com/grahamlicence/responsive-iframe
  */
 (function () {
     var content = document.getElementsByTagName('body')[0],

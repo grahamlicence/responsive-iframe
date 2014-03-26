@@ -1,7 +1,6 @@
 /*! 
- *  Responsive iFrame Copyright (c) 2014 Graham Licence | https://github.com/grahamlicence/responsive-iframe
- *  Requires: extiframe.js to be added to the target frame.
- *  Available via the MIT license
+ *  Responsive iFrame 1.0.0 Copyright (c) 2014 Graham Licence | http://graham.mit-license.org/
+ *  Requires: extiframe.js to be added to the target frame | https://github.com/grahamlicence/responsive-iframe
  */
  
 (function () {
