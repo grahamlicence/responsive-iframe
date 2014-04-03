@@ -50,4 +50,4 @@ Remember to add a default size for non JS fallbacks.
 
 ### Browser support
 
-Tested on IE8+, Chrome, Firefox, Opera
+Tested on IE8+, Chrome, Firefox, Opera, Chrome Android, Safari iOS
